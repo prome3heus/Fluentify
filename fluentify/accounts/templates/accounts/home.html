@@ -1,0 +1,18 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Welcome - Fluentify{% endblock %}
+
+{% block content %}
+<div class="auth-card mx-auto">
+    <div class="auth-header">
+        <h2><i class="bi bi-translate me-2"></i>Fluentify</h2>
+    </div>
+    <div class="auth-body text-center">
+        <a href="{% url 'accounts:login' %}" class="btn btn-fluentify mb-3">
+            <i class="bi bi-box-arrow-in-right me-2"></i> Login
+        </a>
+        <a href="{% url 'accounts:register' %}" class="btn btn-outline-primary">
+            <i class="bi bi-person-plus me-2"></i> Register
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Login - Fluentify{% endblock %}
+
+{% block content %}
+<div class="auth-card mx-auto">
+    <div class="auth-header">
+        <h2><i class="bi bi-translate me-2"></i>Fluentify</h2>
+        <p class="mb-0">Welcome back! Please login</p>
+    </div>
+    <div class="auth-body">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="d-grid gap-2 mt-4">
+                <button type="submit" class="btn btn-fluentify">
+                    <i class="bi bi-box-arrow-in-right me-2"></i> Login
+                </button>
+            </div>
+        </form>
+        <div class="d-flex justify-content-between mt-3">
+            <a href="{% url 'accounts:register' %}" class="text-decoration-none">
+                Create account
+            </a>
+            <a href="#" class="text-decoration-none">
+                Forgot password?
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
